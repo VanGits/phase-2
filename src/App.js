@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "./components/Nav";
 import "./App.css";
 import Main from "./components/Main";
@@ -9,6 +9,16 @@ import List from "./components/List";
 import Cart from "./components/Cart";
 
 const App = () => {
+
+  const [items, setItems] = useState("")
+
+  useEffect(() => {
+    fetch("http://localhost:3000/items")
+    .then(r => r.json())
+    .then(data => setItems(data))
+  },[])
+
+  console.log(items)
   return (
     <div className="App">
         
@@ -19,7 +29,7 @@ const App = () => {
             <Main />
           </Route>
           <Route path="/browse">
-            <Browse />
+            <Browse items = {items}/>
           </Route>
           <Route path="/list">
             <List />
