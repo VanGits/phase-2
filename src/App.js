@@ -10,7 +10,7 @@ import Cart from "./components/Cart";
 
 const App = () => {
 
-  const [items, setItems] = useState("")
+  const [items, setItems] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:3000/items")
@@ -18,7 +18,7 @@ const App = () => {
     .then(data => setItems(data))
   },[])
 
-  console.log(items)
+
   return (
     <div className="App">
         
