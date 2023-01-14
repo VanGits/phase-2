@@ -8,7 +8,7 @@ const Main = () => {
     <div className="Main">
         
       <div className="main-content">
-        <img src={picture} alt="" />
+        <img src={picture} alt="pic" />
         <div className="main-text">
           <h1>Online Marketplace</h1>
           <p>

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/Browse.css";
-import Cart from "./Cart";
+
 const Browse = ({ items, onDataChange }) => {
 
     
