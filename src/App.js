@@ -11,31 +11,36 @@ import Cart from "./components/Cart";
 const App = () => {
 
   const [items, setItems] = useState([])
-
+  const [clickedItemArr, setClickedItemArr] = useState([]);
   useEffect(() => {
     fetch("http://localhost:3000/items")
     .then(r => r.json())
     .then(data => setItems(data))
   },[])
 
+  function handleDataFromChild(newData){
+    setClickedItemArr([...clickedItemArr, newData])
+   
+  }
+
 
   return (
     <div className="App">
         
       <BrowserRouter>
-        <Nav />
+        <Nav cartLength = {clickedItemArr.length}/>
         <Switch>
           <Route exact path="/">
             <Main />
           </Route>
           <Route path="/browse">
-            <Browse items = {items}/>
+            <Browse items = {items} onDataChange={handleDataFromChild}/>
           </Route>
           <Route path="/list">
             <List />
           </Route>
           <Route path="/cart">
-            <Cart />
+            <Cart cartList = {clickedItemArr}/>
           </Route>
         </Switch>
         <Footer />

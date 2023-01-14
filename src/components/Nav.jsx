@@ -3,7 +3,7 @@ import "../styles/Nav.css";
 import { FaShoppingCart } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({cartLength}) => {
   return (
     <nav className="Navbar">
       <div className="nav-content">
@@ -16,9 +16,11 @@ const Nav = () => {
           </NavLink>
           <NavLink to="/browse">Browse</NavLink>
           <NavLink to="/list">List</NavLink>
-          <NavLink to="/cart">
+          <NavLink to="/cart" className="nav-cart">
             <FaShoppingCart id="cart" />
+            <p>{cartLength}</p>
           </NavLink>
+          
         </div>
       </div>
     </nav>

@@ -54,9 +54,24 @@
     font-size: 24px;
     justify-self: center;
     align-self: center;
-    margin-top: 5px;
+    
     color: rgb(41, 41, 41);
 }
+
+.nav-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+   
+}
+
+.nav-cart p {
+    color: #EB455F;
+    margin-left: 12px;
+    
+}
+
 
 
 
