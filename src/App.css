@@ -10,6 +10,7 @@
     
     overflow: hidden;
     background: url("./assets/mainbg.svg");
+    background-repeat:round;
     
     
 }
