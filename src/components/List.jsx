@@ -25,7 +25,7 @@ const List = ({ items, setItems }) => {
     fetch("https://phase-2-json-server.onrender.com/items")
       .then((res) => res.json())
       .then((data) => setItems(data));
-  });
+  }, []);
   return (
     <div className="List">
       <div className="list-wrapper">

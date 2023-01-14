@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Main.css";
 import picture from "../assets/pic4.svg";
-import bg from "../assets/blobbg.svg"
+
 
 const Main = () => {
   return (
