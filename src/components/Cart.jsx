@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/Cart.css";
 import emptyCart from "../assets/cart.svg";
 const Cart = ({ cartList }) => {
-  console.log(cartList);
+  
 
   const cartItem = cartList.map((item) => (
     <div className="cartItem">

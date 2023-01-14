@@ -13,7 +13,7 @@ const App = () => {
   const [items, setItems] = useState([])
   const [clickedItemArr, setClickedItemArr] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/items")
+    fetch("https://phase-2-json-server.onrender.com/items")
     .then(r => r.json())
     .then(data => setItems(data))
   },[])

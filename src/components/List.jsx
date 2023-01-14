@@ -9,7 +9,7 @@ const List = ({ items, setItems }) => {
     e.preventDefault();
     if (title !== "" && price !== "" && image !== "") {
       const postItem = { title: title, price: price, image: image };
-      fetch("http://localhost:3000/items", {
+      fetch("https://phase-2-json-server.onrender.com/items", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -22,7 +22,7 @@ const List = ({ items, setItems }) => {
   }
 
   useEffect(() => {
-    fetch("http://localhost:3000/items")
+    fetch("https://phase-2-json-server.onrender.com/items")
       .then((res) => res.json())
       .then((data) => setItems(data));
   });
