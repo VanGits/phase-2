@@ -37,7 +37,7 @@ const App = () => {
             <Browse items = {items} onDataChange={handleDataFromChild}/>
           </Route>
           <Route path="/list">
-            <List />
+            <List setItems = {setItems} items = {items}/>
           </Route>
           <Route path="/cart">
             <Cart cartList = {clickedItemArr}/>
