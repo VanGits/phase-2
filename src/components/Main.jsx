@@ -12,7 +12,7 @@ const Main = () => {
         <div className="main-text">
           <h1>Online Marketplace</h1>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+          Experience the convenience of online shopping with our mock marketplace web application. Browse, add to cart, and purchase all in one place.
           </p>
         </div>
       </div>
