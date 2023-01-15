@@ -25,6 +25,7 @@
 .cartItem img {
   border-radius: 12px;
   margin: 12px;
+  max-width: 300px;
 }
 
 .empty-cart {
