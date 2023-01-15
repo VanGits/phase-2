@@ -7,7 +7,9 @@ const List = ({ items, setItems }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
+    
     if (title !== "" && price !== "" && image !== "") {
+      alert("Successfully submitted!")
       const postItem = { title: title, price: price, image: image };
       fetch("https://phase-2-json-server.onrender.com/items", {
         method: "POST",
@@ -25,7 +27,7 @@ const List = ({ items, setItems }) => {
     fetch("https://phase-2-json-server.onrender.com/items")
       .then((res) => res.json())
       .then((data) => setItems(data));
-  }, []);
+  });
   return (
     <div className="List">
       <div className="list-wrapper">

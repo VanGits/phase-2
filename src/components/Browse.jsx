@@ -21,7 +21,7 @@ const Browse = ({ items, onDataChange }) => {
 
       <div className="item-text">
         <h2>{item.title}</h2>
-        <h4>Price: ${item.price}</h4>
+        <h4>Price: ${Number(item.price).toFixed(2)}</h4>
         <button onClick={() => handleClick(item)}>Add to Cart</button>
       </div>
       

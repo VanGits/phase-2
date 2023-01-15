@@ -17,6 +17,7 @@ const App = () => {
     .then(r => r.json())
     .then(data => setItems(data))
   },[])
+  
 
   function handleDataFromChild(newData){
     setClickedItemArr([...clickedItemArr, newData])
