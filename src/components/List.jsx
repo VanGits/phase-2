@@ -22,7 +22,7 @@ const List = ({ items, setItems }) => {
       alert("Please fill in the inputs!");
     }
   }
-
+// fix
   useEffect(() => {
     fetch("https://phase-2-json-server.onrender.com/items")
       .then((res) => res.json())

@@ -7,11 +7,12 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Browse from "./components/Browse";
 import List from "./components/List";
 import Cart from "./components/Cart";
+import ItemDetail from "./components/ItemDetail";
 
 const App = () => {
 
   const [items, setItems] = useState([])
-  const [clickedItemArr, setClickedItemArr] = useState([]);
+  
   useEffect(() => {
     fetch("https://phase-2-json-server.onrender.com/items")
     .then(r => r.json())
@@ -20,7 +21,7 @@ const App = () => {
   
 
   function handleDataFromChild(newData){
-    setClickedItemArr([...clickedItemArr, newData])
+    setItems([...items, newData])
    
   }
 
@@ -29,7 +30,7 @@ const App = () => {
     <div className="App">
         
       <BrowserRouter>
-        <Nav cartLength = {clickedItemArr.length}/>
+        <Nav cartLength = {items.length}/>
         <Switch>
           <Route exact path="/">
             <Main />
@@ -41,7 +42,11 @@ const App = () => {
             <List setItems = {setItems} items = {items}/>
           </Route>
           <Route path="/cart">
-            <Cart cartList = {clickedItemArr}/>
+            <Cart cartList = {items}/>
+          </Route>
+          <Route path="/items/:id">
+            <ItemDetail/>
+
           </Route>
         </Switch>
         <Footer />
