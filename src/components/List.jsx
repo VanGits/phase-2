@@ -7,9 +7,9 @@ const List = ({ items, setItems }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    
+
     if (title !== "" && price !== "" && image !== "") {
-      alert("Successfully submitted!")
+      alert("Successfully submitted!");
       const postItem = { title: title, price: price, image: image };
       fetch("https://phase-2-json-server.onrender.com/items", {
         method: "POST",
@@ -17,10 +17,9 @@ const List = ({ items, setItems }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(postItem),
-        
-       
-      });
-      setItems([...items, postItem])
+      })
+        .then((res) => res.json())
+        .then((newItem) => setItems([...items, newItem]));
     } else {
       alert("Please fill in the inputs!");
     }
