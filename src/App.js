@@ -12,6 +12,7 @@ import ItemDetail from "./components/ItemDetail";
 const App = () => {
 
   const [items, setItems] = useState([])
+  const [itemsInCart, setItemsInCart] = useState([])
   
   useEffect(() => {
     fetch("https://phase-2-json-server.onrender.com/items")
@@ -21,7 +22,7 @@ const App = () => {
   
 
   function handleDataFromChild(newData){
-    setItems([...items, newData])
+    setItemsInCart([...itemsInCart, newData])
    
   }
 
@@ -30,7 +31,7 @@ const App = () => {
     <div className="App">
         
       <BrowserRouter>
-        <Nav cartLength = {items.length}/>
+        <Nav cartLength = {itemsInCart.length}/>
         <Switch>
           <Route exact path="/">
             <Main />
@@ -42,7 +43,7 @@ const App = () => {
             <List setItems = {setItems} items = {items}/>
           </Route>
           <Route path="/cart">
-            <Cart cartList = {items}/>
+            <Cart cartList = {itemsInCart}/>
           </Route>
           <Route path="/items/:id">
             <ItemDetail/>

@@ -17,17 +17,14 @@ const List = ({ items, setItems }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(postItem),
+        
+       
       });
+      setItems([...items, postItem])
     } else {
       alert("Please fill in the inputs!");
     }
   }
-// fix
-  useEffect(() => {
-    fetch("https://phase-2-json-server.onrender.com/items")
-      .then((res) => res.json())
-      .then((data) => setItems(data));
-  });
   return (
     <div className="List">
       <div className="list-wrapper">
