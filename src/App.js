@@ -26,6 +26,10 @@ const App = () => {
    
   }
 
+  function addItem(newItem){
+    setItems([...items, newItem])
+  }
+
 
   return (
     <div className="App">
@@ -40,7 +44,7 @@ const App = () => {
             <Browse items = {items} onDataChange={handleDataFromChild}/>
           </Route>
           <Route path="/list">
-            <List setItems = {setItems} items = {items}/>
+            <List addItem = {addItem}/>
           </Route>
           <Route path="/cart">
             <Cart cartList = {itemsInCart}/>

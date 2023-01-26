@@ -1,16 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../styles/List.css";
-const List = ({ items, setItems }) => {
+const List = ({ addItem }) => {
   const [title, setTitle] = useState("");
+  const stateReturn = useState("")
+  
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
+
+  console.log(stateReturn, "stateReturn")
 
   function handleSubmit(e) {
     e.preventDefault();
 
     if (title !== "" && price !== "" && image !== "") {
-      alert("Successfully submitted!");
       const postItem = { title: title, price: price, image: image };
+      alert("Successfully submitted!");
+      setTitle("")
+      setPrice("")
+      setImage("")
+      
       fetch("https://phase-2-json-server.onrender.com/items", {
         method: "POST",
         headers: {
@@ -19,7 +27,7 @@ const List = ({ items, setItems }) => {
         body: JSON.stringify(postItem),
       })
         .then((res) => res.json())
-        .then((newItem) => setItems([...items, newItem]));
+        .then((newItem) => addItem(newItem));
     } else {
       alert("Please fill in the inputs!");
     }
