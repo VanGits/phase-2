@@ -50,7 +50,7 @@ const App = () => {
             <Cart cartList = {itemsInCart}/>
           </Route>
           <Route path="/items/:id">
-            <ItemDetail/>
+            <ItemDetail items = {items}/>
 
           </Route>
         </Switch>

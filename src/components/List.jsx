@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import "../styles/List.css";
 const List = ({ addItem }) => {
   const [title, setTitle] = useState("");
-  const stateReturn = useState("")
-  
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
 
-  console.log(stateReturn, "stateReturn")
 
   function handleSubmit(e) {
     e.preventDefault();

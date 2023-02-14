@@ -1,16 +1,29 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-const ItemDetail = () => {
+const ItemDetail = ({items}) => {
 
-    const params = useParams()
+    const { id } = useParams()
 
-    console.log(params)
+    console.log(id)
+    console.log(items)
+
+    const itemDisplay = items.map((item) => {
+
+        
+
+        if (item.id == id){
+            return (
+                <h1 key={item.id}>{item.title}</h1>
+            )
+        }
+
+    })
 
 
     return (
         <div>
-            
+            {itemDisplay}
         </div>
     );
 }
